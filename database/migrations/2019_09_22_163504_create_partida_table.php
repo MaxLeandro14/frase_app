@@ -15,6 +15,13 @@ class CreatePartidaTable extends Migration
     {
         Schema::create('partida', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nome');
+            $table->tinyInteger('comecou');
+            $table->string('pim');
+            $table->unsignedBigInteger('professor_id');
+            $table->foreign('professor_id')->references('id')->on('professor');
+            $table->unsignedBigInteger('baralho_id');
+            $table->foreign('baralho_id')->references('id')->on('baralho');
             $table->timestamps();
         });
     }

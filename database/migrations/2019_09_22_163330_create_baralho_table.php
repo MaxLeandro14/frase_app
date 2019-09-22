@@ -15,6 +15,8 @@ class CreateBaralhoTable extends Migration
     {
         Schema::create('baralho', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nome', 100);
+            $table->string('descricao', 100);
             $table->timestamps();
         });
     }

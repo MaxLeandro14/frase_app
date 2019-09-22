@@ -15,6 +15,10 @@ class CreateCartaTable extends Migration
     {
         Schema::create('carta', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('baralho_id');
+            $table->foreign('baralho_id')->references('id')->on('baralho');
+            $table->string('palavra', 100);
+            $table->string('significado', 100);
             $table->timestamps();
         });
     }

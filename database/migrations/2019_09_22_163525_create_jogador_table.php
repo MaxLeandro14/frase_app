@@ -15,6 +15,9 @@ class CreateJogadorTable extends Migration
     {
         Schema::create('jogador', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nome');
+            $table->unsignedBigInteger('partida_id');
+            $table->foreign('partida_id')->references('id')->on('partida');
             $table->timestamps();
         });
     }

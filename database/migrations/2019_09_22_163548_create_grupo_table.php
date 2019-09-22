@@ -15,6 +15,14 @@ class CreateGrupoTable extends Migration
     {
         Schema::create('grupo', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('partida_nivel');
+            $table->string('palavras');
+            $table->unsignedBigInteger('partida_id');
+            $table->foreign('partida_id')->references('id')->on('partida');
+            $table->unsignedBigInteger('professor_id');
+            $table->foreign('professor_id')->references('id')->on('professor');
+            $table->unsignedBigInteger('baralho_id');
+            $table->foreign('baralho_id')->references('id')->on('baralho');
             $table->timestamps();
         });
     }
