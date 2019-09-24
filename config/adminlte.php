@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 2',
+    'title' => 'Palavras',
 
     'title_prefix' => '',
 
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Adm</b>LTE',
 
     'logo_mini' => '<b>A</b>LT',
 
@@ -128,22 +128,25 @@ return [
     */
 
     'menu' => [
-        [
-            'text' => 'search',
-            'search' => true,
-        ],
         ['header' => 'main_navigation'],
         [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
-        [
-            'text'        => 'pages',
-            'url'         => 'admin/pages',
+            'text'        => 'Baralho',
             'icon'        => 'far fa-file',
-            'label'       => 4,
-            'label_color' => 'success',
+            'submenu' => [
+                [
+                    'text' => 'Exibir',
+                    'url'  => '#',
+                ],
+                [
+                    'text' => 'Novo Baralho',
+                    'url'  => 'formBaralho',
+                ],
+                [
+                    'text' => 'Gerenciar',
+                    'url'  => '#',
+                ],
+            ]
+        
         ],
         ['header' => 'account_settings'],
         [
